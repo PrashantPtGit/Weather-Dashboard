@@ -104,7 +104,7 @@ function localCurrentCity(city_name) {
     // var currentCity = localStorage.getItem("currentCity");
 }  
 async function displayWeather(city_name) {
-    let weatherdata = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=4dc887f6e7c1527d560c22dbcc3f958b`)
+    let weatherdata = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city_name}&appid=98ff8cdda8c71cd581bb9917537bd8d7`)
         .then(response => response.json())
         .then(data => {
             console.log(data)
@@ -114,7 +114,7 @@ async function displayWeather(city_name) {
             cityname.innerHTML = cityName;
             date.innerHTML = `(${month}/${day}/${year})`;
             console.log(lat, lon);
-            fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=4dc887f6e7c1527d560c22dbcc3f958b`)
+            fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=98ff8cdda8c71cd581bb9917537bd8d7`)
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
@@ -165,7 +165,7 @@ async function displayWeather(city_name) {
 // creating an async function for the five day forecast
 async function displayFiveDayForecast(city_name) {
     cardHeader.innerHTML = '5-Day Forecast';
-    let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city_name}&units=imperial&appid=195cc3727e4ef1bc0cb479c73303fdd4`);
+    let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city_name}&units=imperial&appid=98ff8cdda8c71cd581bb9917537bd8d7`);
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
